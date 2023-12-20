@@ -1,0 +1,31 @@
+
+.mat-toolbar {
+    background-color: #0862A0; 
+    color: #ffffff; 
+    padding: 10px; 
+    font-size: 20px; /* Tamanho da fonte */
+    font-family: 'Courier New', monospace;
+  }
+  
+  .mat-toolbar span {
+    margin-right: 10px; 
+  }
+  
+  .mat-toolbar button {
+    font-family: 'Inter', sans-serif;
+    color: #0862A0; 
+    background-color: white; 
+    margin-right: 10px; 
+    border-radius: 15px;
+    font-weight: 700;
+  }
+  
+  .spacer {
+    flex: 1; 
+  }
+  
+  .logo-menu{
+    width: 140px; 
+    height: auto;
+    margin-top: 15px;
+  }

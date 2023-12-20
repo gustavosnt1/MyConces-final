@@ -1,0 +1,29 @@
+<body>
+
+  <div fxLayout="row wrap" fxLayout.lt-md="column">
+    <mat-card class="example-card" *ngFor="let carro of carros">
+      <mat-card-header>
+        <mat-card-title>{{carro.modelo}}</mat-card-title>
+        <mat-card-subtitle>{{carro.marca}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          <span class="cor">Cor: {{carro.cor}}</span>
+          <span class="ano">Ano de fabricação: {{carro.anoFabricacao}}</span>
+          <span class="quilometragem">KM: {{carro.quilometragem}}</span>
+          <span class="preco">Preço: {{carro.preco}}</span>
+          <span class="categoria">Categoria: {{carro.categoria}}</span>
+          <span class="qtdDisponivel">Estoque: {{carro.qtdDisponivel}}</span>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="primary" (click)="remover(carro)">
+          DELETAR
+        </button>
+        <button mat-icon-button (click)="carro.id !== undefined ? editar(carro.id) : undefined">
+          EDITAR
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</body>

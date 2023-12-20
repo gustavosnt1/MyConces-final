@@ -1,0 +1,48 @@
+{
+  "carros": [
+    {
+      "id": 1,
+      "marca": "a",
+      "modelo": "a",
+      "cor": "a",
+      "anoFabricacao": "2012",
+      "quilometragem": "222",
+      "preco": 22,
+      "categoria": "a",
+      "qtdDisponivel": 22
+    },
+    {
+      "id": 2,
+      "marca": "b",
+      "modelo": "b",
+      "cor": "b",
+      "anoFabricacao": "2",
+      "quilometragem": "2",
+      "preco": 2,
+      "categoria": "b",
+      "qtdDisponivel": 4
+    },
+    {
+      "id": 3,
+      "marca": "c",
+      "modelo": "c",
+      "cor": "c",
+      "anoFabricacao": "3",
+      "quilometragem": "3",
+      "preco": 3,
+      "categoria": "c",
+      "qtdDisponivel": 3
+    },
+    {
+      "id": 4,
+      "marca": "d",
+      "modelo": "d",
+      "cor": "d",
+      "anoFabricacao": "4",
+      "quilometragem": "4",
+      "preco": 4,
+      "categoria": "d",
+      "qtdDisponivel": 4
+    }
+  ]
+}

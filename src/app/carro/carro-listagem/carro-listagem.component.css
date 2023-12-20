@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 10px;
+  font-weight: 900;
+}
+
+div[fxLayout] {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.example-card {
+  width: calc(25% - 20px);
+  margin: 10px;
+  background-color: #0862A0;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.example-card mat-card-title,
+.example-card mat-card-subtitle {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.cor,
+.ano,
+.quilometragem,
+.preco,
+.categoria,
+.qtdDisponivel {
+  display: block;
+  margin-bottom: 8px;
+}
+
+mat-card-actions button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  border-radius: 20px;
+  background-color: white;
+  color: #0862A0;
+  margin-right: 20px;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+}

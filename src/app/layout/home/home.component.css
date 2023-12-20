@@ -1,0 +1,97 @@
+.container {
+  background-color: #0862A0;
+  height: 95.7vh; /* Tamanho total da tela */
+  padding: 20px;
+  color: white; /* Cor do texto */
+}
+
+/* Estilos para o menu */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0862A0;
+  padding-left: 60px;
+  padding-right: 100px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
+
+.menu-section {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.menu-section button{
+  font-size: 18px;
+}
+
+/* Estilos para o botão de Login */
+.login-button {
+  background-color: white;
+  border: 2px; /* Adicionando a borda branca */
+  padding: 20px;
+}
+
+.login-text, .button-text{
+  color: #0862A0;
+  font-weight: bold;
+}
+
+/* Estilos para a parte debaixo da home */
+.bottom-section {
+  display: flex;
+  margin-top: 80px; /* Espaçamento entre o menu e a seção debaixo */
+}
+
+.left-side {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  display: flex; /* Ativar o uso do flexbox */
+  flex-direction: column; /* Colocar os itens em coluna */
+  justify-content: center; /* Centralizar verticalmente */
+  align-items: flex-start; /* Alinhar à esquerda */
+
+}
+
+.left-side {
+  flex: 1; 
+  padding: 20px;
+  margin: 80px;
+}
+
+.right-side {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  padding-left: 20px;
+  margin-right: 100px;
+  margin-top: 80px;
+}
+
+/* Estilos para a imagem */
+.image {
+  width: 100%; /* Imagem ocupando todo o espaço disponível */
+}
+
+.button-home{
+  margin-top: 50px;
+  background-color: white;
+  font-size: 25px;
+  padding: 25px;
+}
+
+.image{
+  border-radius: 25px;
+}
+
+.left-side h1{
+  font-size: 56px;
+  margin-bottom: 10px;
+}

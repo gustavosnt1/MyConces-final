@@ -1,0 +1,42 @@
+.login-container {
+  background-color: #0862A0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+::ng-deep .mat-form-field {
+  width: 190px;
+}
+
+/* Estilo para as bordas dos inputs */
+::ng-deep .custom-input {
+  border: 2px solid #0862A0; /* Cor da borda */
+  border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilo para o texto dos inputs */
+::ng-deep .custom-input {
+  color: #0862A0; /* Cor do texto */
+}
+
+/* Estilo para o texto digitado nos inputs */
+::ng-deep .custom-input {
+  color: #0862A0; /* Cor do texto digitado */
+  background-color: #f0f0f0; /* Cor de fundo */
+}

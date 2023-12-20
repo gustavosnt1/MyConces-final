@@ -1,0 +1,71 @@
+
+
+  .example-form {
+    max-width: 600px;
+    margin: auto; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    padding: 20px; 
+    background-color: #0862A0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s; 
+  }
+  
+  
+  .example-form p {
+    font-size: 24px; 
+    color: #333; 
+    margin-bottom: 20px; 
+    
+  }
+  
+  .example-full-width {
+    width: 100%; 
+  }
+  
+  mat-form-field {
+    margin-bottom: 15px; 
+    
+  }
+  
+  
+  textarea {
+    width: 100%; 
+    height: 100px;
+  }
+  
+  
+  button {
+    font-family: 'Inter', sans-serif;
+    width: 100%; 
+    background-color:white !important;
+    justify-self: center; 
+    grid-column: span 2;
+    border: 2px solid #fff; 
+    border-radius: 15px; 
+    font-weight: 900;
+    font-size: 20px;
+    color: #0862A0 !important;
+
+  }
+
+  body {
+    background-color: white;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+  }
+
+  .mensagem-sucesso {
+    color: #fff; 
+    margin-top: 10px; 
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  

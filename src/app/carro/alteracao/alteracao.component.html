@@ -1,0 +1,35 @@
+<body>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Marca" [(ngModel)]="carroTratamento.marca" name="marca" class="custom-input" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Modelo" [(ngModel)]="carroTratamento.modelo" name="modelo">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Cor" [(ngModel)]="carroTratamento.cor" name="cor">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Ano" [(ngModel)]="carroTratamento.anoFabricacao" name="ano">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Quilometragem" [(ngModel)]="carroTratamento.quilometragem" name="quilometragem">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Preço" [(ngModel)]="carroTratamento.preco" name="preco" type="number">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Categoria" [(ngModel)]="carroTratamento.categoria" name="categoria">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Quantidade" [(ngModel)]="carroTratamento.qtdDisponivel" name="qtdDisponivel" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="cadastrarOuAtualizar()">{{nomeBotao}}</button>
+    <div *ngIf="carroCadastrado" class="mensagem-sucesso">
+      Carro cadastrado com sucesso!
+    </div>
+    <div *ngIf="carroAtualizado" class="mensagem-sucesso">
+      Carro atualizado com sucesso!
+    </div>
+  </form>
+</body>

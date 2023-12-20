@@ -1,0 +1,28 @@
+<!-- <form class="login-form">
+    <mat-form-field class="login-input">
+        <input matInput placeholder="Usuario" [(ngModel)]="usuario.nome" name="Usuario">
+    </mat-form-field>
+    <mat-form-field class="login-input">
+        <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" type="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary"(click)="fazerLogin()">Entrar</button>
+</form> -->
+
+<div class="login-container">
+    <mat-card class="login-card">
+        <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <form class="login-form">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Usuario" [(ngModel)]="usuario.nome" name="Usuario" class="custom-input">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" type="password" class="custom-input">
+            </mat-form-field>
+            <button mat-raised-button color="primary"(click)="fazerLogin()">Entrar</button>
+        </form>
+        </mat-card-content>
+    </mat-card>
+</div>
