@@ -30,7 +30,11 @@
     margin-top: 15px;
   }
 
-  mat-card {
-    width: 300px;
-    margin: 20px;
+  mat-card-content{
+    width: 100px;
+    margin: 0px;
+  }
+
+  mat-card-title{
+    margin: 10px;
   }

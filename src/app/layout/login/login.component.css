@@ -40,3 +40,12 @@
   color: #0862A0; /* Cor do texto digitado */
   background-color: #f0f0f0; /* Cor de fundo */
 }
+
+.mat-mdc-card-header {
+  display: flex;
+  /* padding: 16px 16px 0; */
+  justify-content: center;
+  margin: 23px;
+  font-size: larger;
+  font-weight: bold;
+}

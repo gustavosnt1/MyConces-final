@@ -4,6 +4,7 @@ import { CarroCadastroComponent } from './carro/carro-cadastro/carro-cadastro.co
 import { CarroListagemComponent } from './carro/carro-listagem/carro-listagem.component';
 import { LoginComponent } from './layout/login/login.component';
 import { HomeComponent } from './layout/home/home.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -17,15 +18,18 @@ const routes: Routes = [
   },
   {
     path: "cadastrar-carros",
-    component: CarroCadastroComponent
+    component: CarroCadastroComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "listar-carros",
-    component: CarroListagemComponent
+    component: CarroListagemComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "edicao-carro/:id",
-    component: CarroCadastroComponent
+    component: CarroCadastroComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

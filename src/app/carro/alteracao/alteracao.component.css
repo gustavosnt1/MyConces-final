@@ -1,4 +1,6 @@
-
+body{
+  height: auto;
+}
 
   .example-form {
     max-width: 600px;

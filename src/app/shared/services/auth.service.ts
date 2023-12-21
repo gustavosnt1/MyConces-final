@@ -8,21 +8,37 @@ import { EventEmitter  } from '@angular/core';
 })
 export class AuthService {
 
-    public usuarioAutenticado: boolean = false;
-    mostrarMenuEmitter = new EventEmitter<boolean>();
+  public usuarioAutenticado: boolean = false;
+  mostrarMenuEmitter = new EventEmitter<boolean>();
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    const authData = localStorage.getItem('authData');
+    if(authData){
+      const parsedData: any  = JSON.parse(authData);
+      this.usuarioAutenticado = parsedData.usuarioAutenticado;
+    }
+  }
+
+  isUsuarioAutenticado(): boolean {
+    return this.usuarioAutenticado;
+  }
 
 
   fazerLogin(usuario: Usuario){
-    if (usuario.nome === 'admin@gmail.com' && usuario.senha === '12345')  {
-        this.usuarioAutenticado = true;
-        this.mostrarMenuEmitter.emit(true);
-        this.router.navigate(['/cadastrar-carros']);
-    }  else {
-        this.usuarioAutenticado = false;
-        this.mostrarMenuEmitter.emit(false);
+    if (usuario.nome === 'admin@gmail.com' && usuario.senha === '12345') {
+      this.usuarioAutenticado = true;
+      this.mostrarMenuEmitter.emit(true);
+
+      localStorage.setItem('authData', JSON.stringify({ usuarioAutenticado: true }));
+      console.log('Usuário autenticado. Dados salvos no LocalStorage:', localStorage.getItem('authData'));
+
+      this.router.navigate(['/cadastrar-carros']);
+    } else {
+      this.usuarioAutenticado = false;
+      this.mostrarMenuEmitter.emit(false);
+
+      localStorage.removeItem('authData');
     }
   }
 }
