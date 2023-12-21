@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
 import { CarroFirestoreService } from './shared/services/carroFirestore.service';
 import { FormsModule } from '@angular/forms';
+import { InterceptorsModule } from './interceptors/interceptors.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     LayoutModule,
     CarroModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InterceptorsModule
 
   ],
   providers: [AuthService,

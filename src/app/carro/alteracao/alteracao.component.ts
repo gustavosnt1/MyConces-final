@@ -117,10 +117,6 @@ export class AlteracaoComponent {
         this.messageService.showSuccess('Carro cadastrado com sucesso!')
         this.limparCampos();
         console.log(carro);
-      },
-      (error) => {
-        this.messageService.showError('Erro ao Cadastrar o carro.');
-        console.error(error);
       }
     );
   }
