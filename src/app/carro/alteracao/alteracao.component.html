@@ -1,30 +1,62 @@
 <body>
-  <form class="example-form">
+  <form class="example-form" [formGroup]="form" (ngSubmit)="OnSubmit()">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Marca" [(ngModel)]="carroTratamento.marca" name="marca" class="custom-input" >
+      <input matInput placeholder="Marca" formControlName="Marca" name="marca" class="custom-input" >
+      <mat-error *ngIf="form.get('Marca')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Modelo" [(ngModel)]="carroTratamento.modelo" name="modelo">
+      <input matInput placeholder="Modelo" formControlName="Modelo" name="modelo">
+      <mat-error *ngIf="form.get('Modelo')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Cor" [(ngModel)]="carroTratamento.cor" name="cor">
+      <input matInput placeholder="Cor" formControlName="Cor" name="cor">
+      <mat-error *ngIf="form.get('Cor')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Ano" [(ngModel)]="carroTratamento.anoFabricacao" name="ano">
+      <input matInput placeholder="Ano" formControlName="Ano" name="ano">
+      <mat-error *ngIf="form.get('Ano')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Quilometragem" [(ngModel)]="carroTratamento.quilometragem" name="quilometragem">
+      <input matInput placeholder="Quilometragem" formControlName="Quilometragem" name="quilometragem">
+      <mat-error *ngIf="form.get('Quilometragem')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Preço" [(ngModel)]="carroTratamento.preco" name="preco" type="number">
+      <input matInput placeholder="Preço" formControlName="Preco" name="preco" type="number">
+      <mat-error *ngIf="form.get('Preco')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Categoria" [(ngModel)]="carroTratamento.categoria" name="categoria">
+      <input matInput placeholder="Categoria" formControlName="Categoria" name="categoria">
+      <mat-error *ngIf="form.get('Categoria')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
+    
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Quantidade" [(ngModel)]="carroTratamento.qtdDisponivel" name="qtdDisponivel" type="number">
+      <input matInput placeholder="Quantidade" formControlName="Quantidade" name="qtdDisponivel" type="number">
+      <mat-error *ngIf="form.get('Quantidade')?.hasError('required')">
+        campo obrigatório!
+      </mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="cadastrarOuAtualizar()">{{nomeBotao}}</button>
+    
+    <button mat-raised-button color="primary" type="submit" >{{nomeBotao}}</button>
     <div *ngIf="carroCadastrado" class="mensagem-sucesso">
       Carro cadastrado com sucesso!
     </div>

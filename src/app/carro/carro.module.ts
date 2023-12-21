@@ -4,13 +4,14 @@ import { CarroCadastroComponent } from "./carro-cadastro/carro-cadastro.componen
 import { CarroListagemComponent } from "./carro-listagem/carro-listagem.component";
 import { AlteracaoComponent } from './alteracao/alteracao.component';
 import {MatTableModule} from "@angular/material/table";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import { FirestoreModule } from "../firestore/firestore.module";
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule ({
@@ -29,8 +30,10 @@ import { FirestoreModule } from "../firestore/firestore.module";
         MatFormFieldModule,
         MatIconModule,
         MatCardModule,
-        FirestoreModule
-
+        FirestoreModule,
+        MatSelectModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
 
     exports: [

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Carro } from "../model/carro";
-import { Observable } from "rxjs";
+import { Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 
 export class CarroService {
     carroAPI = 'http://localhost:8080/carros';
-
+    
     constructor(private httpClient: HttpClient) {}
 
     listar(): Observable<Carro[]> {
@@ -35,7 +35,6 @@ export class CarroService {
     pesquisarModelo(modelo: string): Observable<Carro[]> {
         return this.httpClient.get<Carro[]>(`${this.carroAPI}/${modelo}`)
     }
-
 }
 
 

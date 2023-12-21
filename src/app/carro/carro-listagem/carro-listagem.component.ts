@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Carro } from 'src/app/shared/model/carro';
 import { CarroService } from 'src/app/shared/services/carro.service';
@@ -29,19 +29,13 @@ export class CarroListagemComponent {
     this.carroService.remover(carroARemover).subscribe(carroRemovido => {
         console.log("Carro removido");
       const indexARemover = this.carros.findIndex( carro =>
-        carro.id === carro.id);
-
+        carro.id === carroARemover.id);
+        console.log(`carro a remover ${indexARemover}`);
         if(indexARemover >= 0){
           this.carros.splice(indexARemover, 1);
         }
     });
   }
-
-  // pesquisar(){
-  //   this.carroService.pesquisarModelo(this.modeloPesquisado).subscribe(carros => {
-  //       this.carrosPesquisados = carros;
-  //     })
-  // }
 
   editar(id: string) : void {
     this.roteador.navigate(['edicao-carro', id]);

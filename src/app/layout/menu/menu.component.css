@@ -29,3 +29,8 @@
     height: auto;
     margin-top: 15px;
   }
+
+  mat-card {
+    width: 300px;
+    margin: 20px;
+  }
