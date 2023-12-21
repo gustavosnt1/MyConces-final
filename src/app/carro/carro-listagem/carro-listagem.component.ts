@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Carro } from 'src/app/shared/model/carro';
 import { CarroService } from 'src/app/shared/services/carro.service';
+import { MessageService } from 'src/app/shared/services/mensagens.service';
 
 @Component({
   selector: 'app-carro-listagem',
@@ -14,7 +15,7 @@ export class CarroListagemComponent {
   modeloPesquisado: string = '';
   carrosPesquisados: Carro[] = [];
 
-  constructor(private carroService: CarroService, private roteador: Router){
+  constructor(private carroService: CarroService, private roteador: Router, private messageService: MessageService){
 
   }
 
@@ -33,6 +34,7 @@ export class CarroListagemComponent {
         console.log(`carro a remover ${indexARemover}`);
         if(indexARemover >= 0){
           this.carros.splice(indexARemover, 1);
+          this.messageService.showSuccess('Carro excluído com sucesso.');
         }
     });
   }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Carro } from 'src/app/shared/model/carro';
 import { CarroService } from 'src/app/shared/services/carro.service';
+import { MessageService } from 'src/app/shared/services/mensagens.service';
 
 @Component({
   selector: 'app-alteracao',
@@ -24,18 +25,19 @@ export class AlteracaoComponent {
   carro!: Carro;
   isEditMode: boolean = false;
 
-  constructor(private carroService: CarroService, private rotaAtivada: ActivatedRoute, private roteador: Router, private formBuilder: FormBuilder, private route:ActivatedRoute){
+  constructor(private carroService: CarroService, private rotaAtivada: ActivatedRoute, private roteador: Router, private formBuilder: FormBuilder, private route:ActivatedRoute,
+    private messageService: MessageService){
     this.form = this.formBuilder.group({
-      Marca: ["", [Validators.required]], 
-      Modelo: ["", [Validators.required]], 
-      Cor: ["", [Validators.required]], 
-      Ano: ["", [Validators.required]], 
-      Quilometragem: ["", [Validators.required]], 
-      Preco: ["", [Validators.required]], 
-      Categoria: ["", [Validators.required]], 
+      Marca: ["", [Validators.required]],
+      Modelo: ["", [Validators.required]],
+      Cor: ["", [Validators.required]],
+      Ano: ["", [Validators.required]],
+      Quilometragem: ["", [Validators.required]],
+      Preco: ["", [Validators.required]],
+      Categoria: ["", [Validators.required]],
       Quantidade: ["", [Validators.required]]
     })
-    
+
     const idEdicao = this.rotaAtivada.snapshot.params['id'];
     if(idEdicao){
       this.estahCadastrado = false;
@@ -77,13 +79,13 @@ export class AlteracaoComponent {
     if (this.carroId !== null) {
       this.carroService.pesquisarId(this.carroId).subscribe((carro: Carro) => {
         this.form.patchValue({
-          Marca: carro.marca, 
-          Modelo: carro.modelo, 
-          Cor: carro.cor,  
-          Ano: carro.anoFabricacao, 
-          Quilometragem: carro.quilometragem, 
-          Preco: carro.preco, 
-          Categoria: carro.categoria, 
+          Marca: carro.marca,
+          Modelo: carro.modelo,
+          Cor: carro.cor,
+          Ano: carro.anoFabricacao,
+          Quilometragem: carro.quilometragem,
+          Preco: carro.preco,
+          Categoria: carro.categoria,
           Quantidade: carro.qtdDisponivel
         });
       });
@@ -108,12 +110,17 @@ export class AlteracaoComponent {
 
     const {Marca, Modelo, Cor, Ano, Quilometragem, Preco, Categoria, Quantidade} = this.form.value;
     this.carroTratamento = new Carro(Marca, Modelo, Cor, Ano, Quilometragem, Preco, Categoria, Quantidade);
-    
+
     this.carroService.cadastrar(this.carroTratamento).subscribe(
       carro => {
         this.carroCadastrado = true;
+        this.messageService.showSuccess('Carro cadastrado com sucesso!')
         this.limparCampos();
         console.log(carro);
+      },
+      (error) => {
+        this.messageService.showError('Erro ao Cadastrar o carro.');
+        console.error(error);
       }
     );
   }
@@ -121,25 +128,26 @@ export class AlteracaoComponent {
   atualizar(): void{
     if(this.form.invalid)
       return;
-    
+
     console.log("atualizou");
 
     const {Marca, Modelo, Cor, Ano, Quilometragem, Preco, Categoria, Quantidade} = this.form.value;
     this.carroTratamento = {
-      id: this.carroId, 
-      marca: Marca, 
-      modelo: Modelo, 
-      cor: Cor,  
-      anoFabricacao: Ano, 
-      quilometragem: Quilometragem, 
-      preco: Preco, 
-      categoria: Categoria, 
+      id: this.carroId,
+      marca: Marca,
+      modelo: Modelo,
+      cor: Cor,
+      anoFabricacao: Ano,
+      quilometragem: Quilometragem,
+      preco: Preco,
+      categoria: Categoria,
       qtdDisponivel: Quantidade
     };
 
     console.log(this.carroTratamento);
     this.carroService.atualizar(this.carroTratamento).subscribe(carro => {
       this.carroAtualizado = true;
+      this.messageService.showSuccess('Carro atualizado com sucesso!')
       this.limparCampos();
     })
   }
